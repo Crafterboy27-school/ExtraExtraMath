@@ -74,7 +74,7 @@ document.getElementById("answerForm").addEventListener("submit", (ev)=>{
 
 setInterval(()=>{
   if(time>0)time--;
-  document.getElementById("time").textContent = time
+  document.getElementById("time").textContent = time+"/60"
 }, 1000)
 
 updateStreakEls()
