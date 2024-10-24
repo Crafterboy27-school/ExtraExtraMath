@@ -1,60 +1,70 @@
-body{
-    background-color:#227777;
-  }
-  *{
+body {
+    background-color: #227777;
+}
+
+* {
     font-family: arial;
-  }
-  
-  #problem{
-    display:flex;
-    font-size:25vmin;
-    width:fit-content;
-  }
-  
-  .number{
-    margin:0;
-    width:100%;
-  /*   background-color:blue; */
+}
+
+#problem {
+    display: flex;
+    font-size: 25vmin;
+    width: fit-content;
+}
+
+.number {
+    margin: 0;
+    width: 100%;
+    /*   background-color:blue; */
     text-align: right;
-  }
-  .numberContainer{
-    width:fit-content;
-    border-bottom:solid 5px black;
-  }
-  
-  #sign{
+}
+
+.numberContainer {
+    width: fit-content;
+    border-bottom: solid 5px black;
+}
+
+#sign {
     margin-top: auto;
-  }
-  
-  .mainContent{
-  /*   background-color:aqua; */
-    background-color:white;
-    width:90vw;
-    height:80vh;
-    margin:auto;
-    padding:10px;
-    border-radius:10px;
+}
+
+.mainContent {
+    /*   background-color:aqua; */
+    background-color: white;
+    width: 90vw;
+    height: 80vh;
+    margin: auto;
+    padding: 10px;
+    border-radius: 10px;
     border: double #aaaaaa 10px;
-    display:flex;
-  }
-  #answerForm{
-     width:100%;
-  }
-  #answer{
+    display: flex;
+}
+
+#answerForm {
+    width: 100%;
+}
+
+#answer {
     all: unset;
-    width:30vmin;
-    height:20px;
+    width: 30vmin;
+    height: 20px;
     border: solid 2px black;
     border-radius: 5px;
-  }
-  
-  .block{
-    display:block;
-    width:50%;
-  }
-  #missed{
-    margin-top:3px;
-    width:100%;
-    height:40%;
+}
+
+.block {
+    display: block;
+    width: 50%;
+}
+
+#missed {
+    margin-top: 3px;
+    width: 100%;
+    height: 40%;
     overflow-y: scroll;
-  }
+}
+
+.header {
+    color: white;
+    text-align: center;
+}
