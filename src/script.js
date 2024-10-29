@@ -58,7 +58,7 @@ document.getElementById("answerForm").addEventListener("submit", (ev)=>{
   if(time<=0){
     alert("Time's up. The answer was: "+answer)
     time = 60;
-  }if(answerEl.value==""){
+  }else if(answerEl.value==""){
     return;
   }else if(answerEl.value!=answer){
     let asString = topNum+"*"+bottomNum
