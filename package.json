@@ -4,7 +4,8 @@
   "description": "Bad Math practice site",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "copy": "npx cap copy"
   },
   "keywords": [],
   "author": "",
