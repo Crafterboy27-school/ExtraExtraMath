@@ -14,9 +14,13 @@ highStreakEl.textContent = localStorage.getItem("high")
 let topUsed = []
 let bottomUsed = []
 let missed = []
+let max = 10
+
+let searchParams = new URLSearchParams(window.location.search)
+if(!isNaN(parseInt(searchParams.get("max"))))max = parseInt(searchParams.get("max"))
 
 function newQuestion(){
-  if(topUsed.length>=10||bottomUsed.lenght>=10){
+  if(topUsed.length>=max||bottomUsed.lenght>=max){
     topUsed = []
     bottomUsed = []
   }
@@ -26,8 +30,8 @@ function newQuestion(){
     topNum = m[0]
     bottomNum = m[1]
   }else{
-    topNum = Math.round(Math.random()*10);
-    bottomNum = Math.round(Math.random()*10);
+    topNum = Math.round(Math.random()*max);
+    bottomNum = Math.round(Math.random()*max);
     }
   topEl.textContent = topNum;
   bottomEl.textContent = bottomNum;
