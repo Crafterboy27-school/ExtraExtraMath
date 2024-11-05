@@ -9,7 +9,6 @@ let time = 60;
 let streak = 0;
 let streakEl = document.getElementById("streak")
 let highStreakEl = document.getElementById("highStreak")
-highStreakEl.textContent = localStorage.getItem("high")
 
 let topUsed = []
 let bottomUsed = []
@@ -21,6 +20,8 @@ let searchParams = new URLSearchParams(window.location.search)
 if(!isNaN(parseInt(searchParams.get("maxTop"))))maxTop = parseInt(searchParams.get("maxTop"))
 if(!isNaN(parseInt(searchParams.get("maxBottom"))))maxBottom = parseInt(searchParams.get("maxBottom"))
 
+let highName = "high"+maxTop+"*"+maxBottom
+highStreakEl.textContent = localStorage.getItem(highName)
 
 function newQuestion(){
   if(topUsed.length>=maxTop||bottomUsed.lenght>=maxBottom){
@@ -49,9 +50,9 @@ function newQuestion(){
   bottomUsed.push(bottomNum)
 }
 function updateStreakEls(){
-  if(streak>localStorage.getItem("high"))localStorage.setItem("high", streak)
+  if(streak>localStorage.getItem(highName))localStorage.setItem(highName, streak)
   streakEl.textContent = streak;
-  highStreakEl.textContent = localStorage.getItem("high")
+  highStreakEl.textContent = localStorage.getItem(highName)
 }
 document.getElementById("answerForm").addEventListener("submit", (ev)=>{
   ev.preventDefault()
