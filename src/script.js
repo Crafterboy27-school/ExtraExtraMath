@@ -16,14 +16,19 @@ let missed = []
 let maxTop = 10
 let maxBottom = 10
 
+let operation = "*"
+
 let searchParams = new URLSearchParams(window.location.search)
 if(!isNaN(parseInt(searchParams.get("maxTop"))))maxTop = parseInt(searchParams.get("maxTop"))
 if(!isNaN(parseInt(searchParams.get("maxBottom"))))maxBottom = parseInt(searchParams.get("maxBottom"))
+if(searchParams.get("operation")!=null)operation = searchParams.get("operation").slice(0, 2)
+
 
 document.getElementById("maxTop").textContent = maxTop
 document.getElementById("maxBottom").textContent = maxBottom
+document.getElementById("operation").textContent = operation
 
-let highName = "high"+maxTop+"*"+maxBottom
+let highName = "high"+maxTop+operation+maxBottom
 highStreakEl.textContent = localStorage.getItem(highName)
 
 function newQuestion(){
