@@ -20,6 +20,9 @@ let searchParams = new URLSearchParams(window.location.search)
 if(!isNaN(parseInt(searchParams.get("maxTop"))))maxTop = parseInt(searchParams.get("maxTop"))
 if(!isNaN(parseInt(searchParams.get("maxBottom"))))maxBottom = parseInt(searchParams.get("maxBottom"))
 
+document.getElementById("maxTop").textContent = maxTop
+document.getElementById("maxBottom").textContent = maxBottom
+
 let highName = "high"+maxTop+"*"+maxBottom
 highStreakEl.textContent = localStorage.getItem(highName)
 
