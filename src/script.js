@@ -16,7 +16,7 @@ let missed = []
 let maxTop = 10
 let maxBottom = 10
 
-let operation = "*"
+let operation = "x"
 
 let searchParams = new URLSearchParams(window.location.search)
 if(!isNaN(parseInt(searchParams.get("maxTop"))))maxTop = parseInt(searchParams.get("maxTop"))
@@ -38,7 +38,7 @@ function newQuestion(){
   }
   
   if(Math.round(Math.random()*3)==1&&missed.length>=1){
-    let m = missed.shift().split("*").reverse()
+    let m = missed.shift().split(operation).reverse()
     topNum = m[0]
     bottomNum = m[1]
   }else{
@@ -49,7 +49,12 @@ function newQuestion(){
   bottomEl.textContent = bottomNum;
  
   
-  answer = bottomNum*topNum
+  switch(operation){
+    case("x"):
+    default:
+      answer = bottomNum*topNum
+      break;
+  }
   if(topUsed.includes(topNum)||bottomUsed.includes(bottomNum)){
     newQuestion()
     return;
@@ -70,7 +75,7 @@ document.getElementById("answerForm").addEventListener("submit", (ev)=>{
   }else if(answerEl.value==""){
     return;
   }else if(answerEl.value!=answer){
-    let asString = topNum+"*"+bottomNum
+    let asString = topNum+operation+bottomNum
     let asString2 = asString+"≠"+answerEl.value
     missed.push(asString)
     let p = document.createElement("p")
