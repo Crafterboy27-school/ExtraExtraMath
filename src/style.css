@@ -21,6 +21,8 @@ body {
 
 .numberContainer {
     width: fit-content;
+}
+#problem{
     border-bottom: solid 5px black;
 }
 
@@ -48,7 +50,7 @@ body {
     all: unset;
     width: 30vmin;
     height: 20px;
-    border: solid 2px black;
+    border: solid 2px rgba(0,0,0,0.1);
     border-radius: 5px;
 }
 
