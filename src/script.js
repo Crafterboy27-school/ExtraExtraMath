@@ -16,7 +16,7 @@ let missed = []
 let maxTop = 10
 let maxBottom = 10
 
-let operation = "x"
+let operation = "+"
 
 let searchParams = new URLSearchParams(window.location.search)
 if(!isNaN(parseInt(searchParams.get("maxTop"))))maxTop = parseInt(searchParams.get("maxTop"))
@@ -27,6 +27,8 @@ if(searchParams.get("operation")!=null)operation = searchParams.get("operation")
 document.getElementById("maxTop").textContent = maxTop
 document.getElementById("maxBottom").textContent = maxBottom
 document.getElementById("operation").textContent = operation
+document.getElementById("sign").textContent = operation
+
 
 let highName = "high"+maxTop+operation+maxBottom
 highStreakEl.textContent = localStorage.getItem(highName)
@@ -44,12 +46,15 @@ function newQuestion(){
   }else{
     topNum = Math.round(Math.random()*maxTop);
     bottomNum = Math.round(Math.random()*maxBottom);
-    }
+  }
   topEl.textContent = topNum;
   bottomEl.textContent = bottomNum;
  
   
   switch(operation){
+    case("+"):
+      answer = bottomNum+topNum
+      break;
     case("x"):
     default:
       answer = bottomNum*topNum
