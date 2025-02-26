@@ -53,11 +53,11 @@ function newQuestion(){
   
   switch(operation){
     case("+"):
-      answer = bottomNum+topNum
+      answer = parseFloat(bottomNum)+parseFloat(topNum)
       break;
     case("x"):
     default:
-      answer = bottomNum*topNum
+      answer = parseFloat(bottomNum)*parseFloat(topNum)
       break;
   }
   if(topUsed.includes(topNum)||bottomUsed.includes(bottomNum)){
